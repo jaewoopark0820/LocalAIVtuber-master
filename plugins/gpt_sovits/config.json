@@ -1,0 +1,26 @@
+[
+    {
+        "name": "leaf",
+        "sovits_path": "leaf\\leaf_e8_s136.pth",
+        "gpt_path":"leaf\\s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt",
+        "reference_audio_path":"leaf\\The birch canoe slid on the smooth planks..wav",
+        "reference_audio_text":"The birch canoe slid on the smooth planks.Glue the sheet to the dark blue background.",
+        "reference_audio_language":"en"
+    },
+    {
+        "name": "nene",
+        "sovits_path": "nene\\nene30_e8_s328.pth",
+        "gpt_path":"nene\\nene30-e15.ckpt",
+        "reference_audio_path":"nene\\The sun is shining brightly in the clear blue sky..wav",
+        "reference_audio_text":"The sun is shining brightly in the clear blue sky.",
+        "reference_audio_language":"en"
+    },
+    {
+      "name": "hinggu",
+      "sovits_path": "hinggu\\hinggu.pth",
+      "gpt_path": "hinggu\\hinggu.ckpt",
+      "reference_audio_path": "hinggu\\The sun is shining brightly in the clear blue sky..wav",
+      "reference_audio_text": "The sun is shining brightly in the clear blue sky.",
+      "reference_audio_language": "en"
+    }
+]
