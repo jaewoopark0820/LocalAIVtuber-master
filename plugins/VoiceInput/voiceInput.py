@@ -12,6 +12,8 @@ from .languages import LANGUAGES
 from eventManager import event_manager, EventType
 import keyboard
 
+#import logging#20241023_kpopmodder
+
 class VoiceInput(InputPluginInterface):
     current_module_directory = os.path.dirname(__file__)
     MIC_OUTPUT_PATH = os.path.join(
@@ -27,7 +29,9 @@ class VoiceInput(InputPluginInterface):
         self.input_language = "english"
         self.ambience_adjusted = False
 
-        self.model = whisper.load_model("small.en")
+#        self.model = whisper.load_model("small.en")#20241024_kpopmodder
+        self.model = whisper.load_model("small")#20241024_kpopmodder
+
         self.liveTextbox.print(f"whisper_model.device: {self.model.device}")
         self.whisper_filter_list = [
             'you', 'thank you.', 'thanks for watching.', "Thank you for watching.", "1.5%", "I'm going to put it in the fridge.", "I", ".", "okay.", "bye.", "so,"]
@@ -104,8 +108,14 @@ class VoiceInput(InputPluginInterface):
             audio = whisper.load_audio(self.MIC_OUTPUT_PATH)
             audio = whisper.pad_or_trim(audio)
             mel = whisper.log_mel_spectrogram(audio).to(self.model.device)
+
+#            logging.info(f"input_language changed to: {self.input_language}")  # 로그 기록#20241023_kpopmodder
+
+#            print("input_language changed to: "+self.input_language)  # 로그 기록#20241023_kpopmodder
+
             options = whisper.DecodingOptions(task='transcribe', language=self.input_language,
-                                              without_timestamps=True, fp16=False if self.model.device == 'cpu' else None)
+                                                  without_timestamps=True, fp16=False if self.model.device == 'cpu' else None)
+
             result = whisper.decode(self.model, mel, options)
             transcribed_text = result.text
         except sr.UnknownValueError:
