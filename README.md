@@ -134,3 +134,105 @@ Then press start fetching chat
 ![image](https://github.com/0Xiaohei0/LocalAIVtuber/assets/24196833/96b8a971-00e8-4930-a9b4-897b3ddf27bf)
 
 
+## 한국어 설명:
+
+- 링크:
+- https://github.com/jaewoopark0820/LocalAIVtuber-master
+
+- window power shell 관리자 권한으로 열어서 설치
+  ```
+  python -m venv venv
+  .\venv\Scripts\activate
+   ```
+   
+- 프로그램을 다시 시작하려면 다음을 실행하세요.
+  ```
+  .\venv\Scripts\activate
+   python main.py
+   ```
+   
+- packages 설치
+  ```
+  .\venv\Scripts\pip install --upgrade --force-reinstall -r requirements.txt
+
+  .\venv\Scripts\pip install -r requirements.txt
+  .\venv\Scripts\pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+  .\venv\Scripts\pip install llama-cpp-python
+
+  pip install nltk
+  .\venv\Scripts\pip install nltk
+  python -m nltk.downloader -d C:\nltk_data all
+   ```
+   
+  - 프로그램을 다시 시작할 때 주의사항<-이거 사실상 visual studio에서 F5 로 컴파일 시키는 것만 먹힙니다.
+    ```
+  .\venv\Scripts\activate
+   python main.py
+   ```
+   
+- gpt_sovits 와 rvc 동시 사용 안 됨.
+
+LocalAIVtuber-master\modules.json
+
+{
+  "Aya_LLM_GGUF": true,
+  "Chess": false,
+  "Local_EN_to_JA": true,
+  "Idle_think": false,
+  "vitsTTS": false,
+  "gpt_sovits": false,
+  "Local_LLM": false,
+  "No_Translate": true,
+  "Rana_LLM_gguf": false,
+  "ChatGPT_Azure": true,
+  "rvc": true,
+  "silero": false,
+  "TwitchChatFetch": true,
+  "VoiceInput": true,
+  "voicevox": false,
+  "VtubeStudio": true,
+  "YoutubeChatFetch": true
+}
+
+
+gpt_sovits 와 rvc 동시 사용 안 됨.
+
+
+Rvc 에서 TTS 이름 잘봐야 합니다.
+이름 보고 여자성별이면, rvc 모델 여자걸로
+남자 성별이면, rvc 모델 남자걸로 맞춰줘야 합니다.
+
+
+- LocalAIVtuber-master\plugins\VoiceInput\voiceInput.py 에서
+  아래와 같이 소스코드 수정해야 다국어 모드가 활성화 됩니다.
+  
+  #        self.model = whisper.load_model("small.en")#20241024_kpopmodder
+        self.model = whisper.load_model("small")#20241024_kpopmodder
+		
+
+
+- LocalAIVtuber-master\modules.json
+
+  뭔가 파이썬 디렉터리 추가하고 싶으면, 아래처럼 추가해서, true로 넣어줘야 합니다.
+  안 넣으면, 에러 납니다.
+  
+  {
+  "Aya_LLM_GGUF": true,
+  "Korean_Chat": true,
+  "Chess": false,
+  "Local_EN_to_JA": true,
+  "Idle_think": false,
+  "vitsTTS": false,
+  "gpt_sovits": false,
+  "Local_LLM": false,
+  "No_Translate": true,
+  "Rana_LLM_gguf": false,
+  "ChatGPT_Azure": true,
+  "rvc": true,
+  "silero": false,
+  "TwitchChatFetch": true,
+  "VoiceInput": true,
+  "voicevox": false,
+  "VtubeStudio": true,
+  "YoutubeChatFetch": true
+}
