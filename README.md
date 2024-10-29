@@ -165,7 +165,7 @@ Then press start fetching chat
    ```
    
   - 프로그램을 다시 시작할 때 주의사항<-이거 사실상 visual studio에서 F5 로 컴파일 시키는 것만 먹힙니다.
-    ```
+  ```
   .\venv\Scripts\activate
    python main.py
    ```
