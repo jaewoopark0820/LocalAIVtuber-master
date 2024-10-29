@@ -173,7 +173,7 @@ Then press start fetching chat
 - gpt_sovits 와 rvc 동시 사용 안 됨.
 
 LocalAIVtuber-master\modules.json
-
+    ```
 {
   "Aya_LLM_GGUF": true,
   "Chess": false,
@@ -193,7 +193,7 @@ LocalAIVtuber-master\modules.json
   "VtubeStudio": true,
   "YoutubeChatFetch": true
 }
-
+    ```
 
 gpt_sovits 와 rvc 동시 사용 안 됨.
 
@@ -205,17 +205,17 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
 
 - LocalAIVtuber-master\plugins\VoiceInput\voiceInput.py 에서
   아래와 같이 소스코드 수정해야 다국어 모드가 활성화 됩니다.
-  
+     ``` 
   #        self.model = whisper.load_model("small.en")#20241024_kpopmodder
         self.model = whisper.load_model("small")#20241024_kpopmodder
-		
+    ```		
 
 
 - LocalAIVtuber-master\modules.json
 
   뭔가 파이썬 디렉터리 추가하고 싶으면, 아래처럼 추가해서, true로 넣어줘야 합니다.
   안 넣으면, 에러 납니다.
-  
+    ```  
   {
   "Aya_LLM_GGUF": true,
   "Korean_Chat": true,
@@ -236,3 +236,5 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
   "VtubeStudio": true,
   "YoutubeChatFetch": true
 }
+
+    ```
