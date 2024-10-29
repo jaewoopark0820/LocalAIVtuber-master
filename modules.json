@@ -1,5 +1,6 @@
 {
   "Aya_LLM_GGUF": true,
+  "Korean_Chat": true,
   "Chess": false,
   "Local_EN_to_JA": true,
   "Idle_think": false,
