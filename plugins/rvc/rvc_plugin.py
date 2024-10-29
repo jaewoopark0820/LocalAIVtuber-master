@@ -46,6 +46,14 @@ class RVCPlugin(TTSPluginInterface):
         if not os.path.exists(os.path.join(self.current_module_directory, "rvc_model_dir", self.rvc_model_name)):
             self.download_model_from_url(
                 "https://huggingface.co/zAnonymousWizard/genshinqiqi/resolve/main/qiqigenshin.zip?download=true")
+            self.download_model_from_url(
+                "https://huggingface.co/jaewoopark96/majae/resolve/main/majae.zip?download=true")
+            self.download_model_from_url(
+                "https://huggingface.co/jaewoopark96/hinggu/resolve/main/hinggu.zip?download=true")
+            self.download_model_from_url(
+                "https://huggingface.co/jaewoopark96/purine/resolve/main/purine.zip?download=true")
+            self.download_model_from_url(
+                "https://huggingface.co/jaewoopark96/trollya/resolve/main/trollya.zip?download=true")
 
         self.model = RVC(self.rvc_model_name)
         self.update_rvc_model_list()
