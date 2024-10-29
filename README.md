@@ -193,7 +193,7 @@ LocalAIVtuber-master\modules.json
   "VtubeStudio": true,
   "YoutubeChatFetch": true
 }
-    ```
+   ```
 
 gpt_sovits 와 rvc 동시 사용 안 됨.
 
@@ -236,5 +236,4 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
   "VtubeStudio": true,
   "YoutubeChatFetch": true
 }
-
     ```
