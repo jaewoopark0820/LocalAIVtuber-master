@@ -169,7 +169,8 @@ Then press start fetching chat
   .\venv\Scripts\activate
    python main.py
    ```
-   
+ ![image](https://github.com/user-attachments/assets/b321c9e5-cdff-4e24-9bbd-624231dd8cdd)
+
 - gpt_sovits 와 rvc 동시 사용 안 됨.
 
 LocalAIVtuber-master\modules.json
@@ -237,3 +238,4 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
   "YoutubeChatFetch": true
   }
    ```
+ ![image](https://github.com/user-attachments/assets/9f6a1022-ac1c-412f-9dfc-dc98a649ec33)
