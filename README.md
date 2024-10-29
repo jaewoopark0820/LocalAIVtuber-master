@@ -236,6 +236,6 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
   "VtubeStudio": true,
   "YoutubeChatFetch": true
 }
-   ```	
+   ```
    
 - 위 내용 주의하면서 설정하면 됩니다.
