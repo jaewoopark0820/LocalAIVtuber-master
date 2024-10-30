@@ -238,3 +238,6 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
   }
    ```
  ![image](https://github.com/user-attachments/assets/9f6a1022-ac1c-412f-9dfc-dc98a649ec33)
+ 
+
+- 영어로된 내용은 번역기 돌려보시면 됩니다. 한국어 설명은 참고만 해주시면 감사하겠습니다.
