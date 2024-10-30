@@ -136,8 +136,7 @@ Then press start fetching chat
 
 ## 한국어 설명:
 
-- 링크:
-- https://github.com/jaewoopark0820/LocalAIVtuber-master
+- 원본 링크(출처): https://github.com/0Xiaohei0/LocalAIVtuber
 
 - window power shell 관리자 권한으로 열어서 설치
   ```
