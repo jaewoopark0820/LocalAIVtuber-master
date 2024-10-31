@@ -240,6 +240,10 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
  ![image](https://github.com/user-attachments/assets/9f6a1022-ac1c-412f-9dfc-dc98a649ec33)
  
 
+
+
+
+
 - 이렇게 vtube studio API 시작되어 있어야 가능합니다.
 
 ![image](https://github.com/user-attachments/assets/d518f877-74d9-478b-bee0-82da2a04a7df)
