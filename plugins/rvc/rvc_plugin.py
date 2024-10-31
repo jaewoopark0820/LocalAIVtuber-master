@@ -26,8 +26,8 @@ class RVCPlugin(TTSPluginInterface):
     rvc_model_dir = os.path.join(current_module_directory, "rvc_model_dir")
     rvc_index_dir = os.path.join(current_module_directory, "rvc_index_dir")
 
-    edge_tts_voice = "en-US-AnaNeural"
-    rvc_model_name = 'qiqi.pth'
+    edge_tts_voice = "ko-KR-SunHiNeural"#20241031_kpopmodder
+    rvc_model_name = 'hinggu.pth'#20241031_kpopmodder
     use_rvc = True
     transpose = 0
     index_rate = .75

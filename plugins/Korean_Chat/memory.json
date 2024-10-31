@@ -171,6 +171,14 @@
         {
             "role": "assistant",
             "content": "\uac10\uc0ac\ud569\ub2c8\ub2e4! \uc800\uac00\uc758 \uacfc\uac70 \uae30\uc5b5 \uae30\ub2a5\uc740 \uc798 \uc791\ub3d9\ud574 \ubcf4\uc600\uad70\uc694. \uc5b8\uc81c\ub4e0\uc9c0 \ub354 \ud544\uc694\ud55c \uc815\ubcf4\ub098 \ub2f5\uc744 \uc54c\ub824\uc8fc\uc138\uc694!"
+        },
+        {
+            "role": "user",
+            "content": "\ud79d\uad6c\ub294 \ubb50\uc57c?"
+        },
+        {
+            "role": "assistant",
+            "content": "\ube14\ub8e8\uc544\uce74\uc774\ube0c, \uba85\uc77c \ubc29\uc8fc \uc720\ud29c\ubc84\uc57c!"
         }
     ]
 }
