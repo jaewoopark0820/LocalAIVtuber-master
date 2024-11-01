@@ -141,7 +141,7 @@ class VtubeStudio(VtuberPluginInterface):
 
     def mouth_open_faceAngle(self):#20241101_kpopmodder
 
-        face_left_right_value = (self.avatar_data.mouth_open - 0) * (30 - (-30)) / (1 - 0) + (-30)#20241101_kpopmodder
+        face_left_right_up_down_value = ((self.avatar_data.mouth_open - 0) * (30 - (-30)) / (1 - 0) + (-30)) / 2#20241101_kpopmodder
 
         message = {
             "apiName": "VTubeStudioPublicAPI",
@@ -153,11 +153,11 @@ class VtubeStudio(VtuberPluginInterface):
                 "parameterValues": [
                     {
                         "id": "FaceAngleX",#20241101_kpopmodder
-                        "value": face_left_right_value
+                        "value": face_left_right_up_down_value
                     },
                     {
                         "id": "FaceAngleY",#20241101_kpopmodder
-                        "value": face_left_right_value
+                        "value": face_left_right_up_down_value
                     }
                 ]
             }
