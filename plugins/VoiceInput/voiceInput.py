@@ -26,7 +26,7 @@ class VoiceInput(InputPluginInterface):
         # self.transcriber = pipeline("automatic-speech-recognition", model="openai/whisper-base.en")
         self.mic_mode = 'open mic'
         self.recording = False
-        self.input_language = "english"
+        self.input_language = "korean"
         self.ambience_adjusted = False
 
 #        self.model = whisper.load_model("small.en")#20241024_kpopmodder

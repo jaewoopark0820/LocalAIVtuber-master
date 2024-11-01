@@ -16,5 +16,7 @@
   "VoiceInput": true,
   "voicevox": false,
   "VtubeStudio": true,
-  "YoutubeChatFetch": true
+  "YoutubeChatFetch": true,
+  "VtubeStudioSmileDefault": true,
+  "VtubeStudioCloseAndOpenEyes": true
 }
