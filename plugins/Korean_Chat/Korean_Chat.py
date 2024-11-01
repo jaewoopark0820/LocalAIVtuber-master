@@ -12,6 +12,22 @@ class Korean_Chat(LLMPluginInterface):
     temperature = 0.9
 #    memory_file = "memory.json"  #20241031_kpopmodder_Memory file path
     memory_file = os.path.join(".", "plugins", "Korean_Chat", "memory.json")#20241031_kpopmodder_Memory file path
+
+    def __init__(self):
+        self.memory = self.load_memory()  #20241101_kpopmodder_초기 메모리 로드
+
+    def load_memory(self):#20241101_kpopmodder
+        try:
+            with open(self.memory_file, "r") as file:
+                return json.load(file)
+        except FileNotFoundError:
+            return {}
+
+    def save_memory(self):#20241101_kpopmodder
+        with open(self.memory_file, "w") as file:
+            json.dump(self.memory, file, indent=4)
+
+
     def init(self):
         # Directory where the module is located
         current_module_directory = os.path.dirname(__file__)
@@ -54,27 +70,14 @@ class Korean_Chat(LLMPluginInterface):
         # Initialize the model
         self.llm = Llama(model_path=model_path, n_ctx=self.context_length, n_gpu_layers=-1, seed=-1)
 
-    def load_memory(self, user_id):#20241031_kpopmodder
-        try:
-            with open(self.memory_file, "r") as file:
-                memory = json.load(file)
-            return memory.get(user_id, [])
-        except FileNotFoundError:
-            return []
+    def load_user_memory(self, user_id):#20241101_kpopmodder
+        return self.memory.get(user_id, [])
 
-    def save_memory(self, user_id, messages):#20241031_kpopmodder
-        try:
-            with open(self.memory_file, "r") as file:
-                memory = json.load(file)
-        except FileNotFoundError:
-            memory = {}
-
-        memory[user_id] = messages
-        with open(self.memory_file, "w") as file:
-            json.dump(memory, file, indent=4)
+    def save_user_memory(self, user_id, messages):#20241101_kpopmodder
+        self.memory[user_id] = messages
 
     def create_ui(self):
-        with gr.Accordion("Aya LLM settings", open=False):
+        with gr.Accordion("Korean Chat LLM settings", open=False):
             with gr.Row():
                 self.temperature_slider = gr.Slider(minimum=0, maximum=1, value=self.temperature,label="temperature")
                 
@@ -126,7 +129,7 @@ class Korean_Chat(LLMPluginInterface):
 
     def predict(self, message, history, system_prompt, user_id="default_user"):#20241031_kpopmodder
         #20241031_kpopmodder Load past conversation history for this user
-        messages = self.load_memory(user_id)
+        messages = self.load_user_memory(user_id)#20241101_kpopmodder
 
         #20241031_kpopmodder Add the system prompt
         if not messages:
@@ -171,4 +174,5 @@ class Korean_Chat(LLMPluginInterface):
 
         #20241031_kpopmodder Save updated conversation history
         messages.append({"role": "assistant", "content": output})
-        self.save_memory(user_id, messages)
+        self.save_user_memory(user_id, messages)#20241101_kpopmodder
+        self.save_memory()  #20241101_kpopmodder# 모든 사용자 메모리를 파일에 저장
