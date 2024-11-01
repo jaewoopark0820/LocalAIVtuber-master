@@ -9,6 +9,7 @@ from tqdm import tqdm
 import websocket
 from pluginInterface import VtuberPluginInterface
 import os
+import random
 
 
 class VtubeStudio(VtuberPluginInterface):
@@ -115,6 +116,7 @@ class VtubeStudio(VtuberPluginInterface):
     def mouth_data_thread(self):
         while True:
             #print(f"Setting MouthOpen to {self.avatar_data.mouth_open}")
+
             message = {
                 "apiName": "VTubeStudioPublicAPI",
                 "apiVersion": "1.0",
@@ -130,5 +132,37 @@ class VtubeStudio(VtuberPluginInterface):
                     ]
                 }
             }
+
+            if self.avatar_data.mouth_open > 0.47:#20241101_kpopmodder
+                self.mouth_open_faceAngle()
+
             self.ws.send(json.dumps(message))
             time.sleep(0.1)
+
+    def mouth_open_faceAngle(self):#20241101_kpopmodder
+
+        face_left_right_value = (self.avatar_data.mouth_open - 0) * (30 - (-30)) / (1 - 0) + (-30)#20241101_kpopmodder
+
+        message = {
+            "apiName": "VTubeStudioPublicAPI",
+            "apiVersion": "1.0",
+            "requestID": "3",
+            "messageType": "InjectParameterDataRequest",
+            "data": {
+                "mode": "set",
+                "parameterValues": [
+                    {
+                        "id": "FaceAngleX",#20241101_kpopmodder
+                        "value": face_left_right_value
+                    },
+                    {
+                        "id": "FaceAngleY",#20241101_kpopmodder
+                        "value": face_left_right_value
+                    }
+                ]
+            }
+        }
+
+        self.ws.send(json.dumps(message))
+
+
