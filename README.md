@@ -250,4 +250,17 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
 
 ![image](https://github.com/user-attachments/assets/8cb24c4f-fa7d-40cc-84c0-89894a99da33)
 
+- Azure 관련해서 api version은 Azure OpenAI Studio => 배포 => AI 클릭 하면 나옵니다.
+
+![image](https://github.com/user-attachments/assets/7d387c4f-e301-4ad9-b2c5-3af3460c98ab)
+
+
+![image](https://github.com/user-attachments/assets/fdfadebf-e9fb-4680-9a90-4ce72b61ee44)
+
+- azure key, end point url 은 아래와 같이 확인 가능합니다.
+
+![image](https://github.com/user-attachments/assets/f2781cfb-9e25-4a15-8228-f602c6fe8d06)
+
+![image](https://github.com/user-attachments/assets/74a5ae4f-09ad-445d-8800-4d7a802e1cc8)
+
 - 영어로된 내용은 번역기 돌려보시면 됩니다. 한국어 설명은 참고만 해주시면 감사하겠습니다.
