@@ -72,7 +72,7 @@ class VtubeStudioCloseAndOpenEyes(VtuberPluginInterface):#20241101_kpopmodder
             if self.close_and_open_enable == True:
                 #print(self.close_and_open_enable)
                 self.start_close_and_open_eye_request()
-            time.sleep(5)
+            time.sleep(random.randint(3, 5))
 
     def start_close_and_open_eye_request(self):
         message = {
