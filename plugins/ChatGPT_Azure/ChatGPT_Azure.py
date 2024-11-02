@@ -34,14 +34,6 @@ class ChatGPT_Azure(LLMPluginInterface):
                 self.model_name_Input = gr.Textbox(label="model_name", value=self.model_name)
                 self.model_name_Input.change(fn=self.update_model_name,inputs=self.model_name_Input)
 
-                # self.start_azure_button = gr.Button(#20241102_kpopmodder
-                #     "start azure", self.start_azure)
-
-        # self.start_azure_button.click(self.start_azure)#20241102_kpopmodder
-
-    # def start_azure(self):#20241102_kpopmodder
-    #     pass
-
     def update_api_key(self, value):
         self.api_key = value
         config_manager.save_config("ChatGPT_Azure", "api_key", value)
