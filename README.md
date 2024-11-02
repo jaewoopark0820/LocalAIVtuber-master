@@ -263,4 +263,6 @@ Rvc 에서 TTS 이름 잘봐야 합니다.
 
 ![image](https://github.com/user-attachments/assets/74a5ae4f-09ad-445d-8800-4d7a802e1cc8)
 
+- vtube studio 모델 링크 : https://drive.google.com/file/d/1IjzhfiLzeYDOgN_1KOOXe_wUUhPyP4HO/view?usp=drive_link
+
 - 영어로된 내용은 번역기 돌려보시면 됩니다. 한국어 설명은 참고만 해주시면 감사하겠습니다.
